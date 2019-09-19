@@ -93,3 +93,29 @@ document.querySelector('.link4').addEventListener('mouseenter',function(){
 //end
 
 
+// menu planet moving
+
+var planet = document.querySelector('#planet');
+var logo = document.querySelector('#menu-logo');
+var close = document.querySelector('#close-menu');
+var phoneSec1 = document.querySelector('.first img');
+
+document.querySelector('#menu').addEventListener('mousemove',function(e){ 
+    var x = 1 * event.clientX * 10 / window.innerWidth + '%';
+    var x1 = -1 * event.clientX * 10 / window.innerWidth + '%';
+    var y =1* event.clientY * 10 / window.innerHeight + '%';
+    var y1 =1* event.clientY * 10 / window.innerHeight + '%';
+    
+    planet.style.transform = "   translateX(" + x +") translateY(" + y +")";
+    planet.style.transition = "all 2s linear";
+    logo.style.transform = "translateX(" +  x1 + ") translateY(" +  y1 + ")";
+    logo.style.transition = "all 1s linear";
+})
+
+
+document.querySelector('.first').addEventListener('mousemove', function(e) {
+    var x = 1 * event.clientX * 10 / window.innerWidth + '%';
+    var y =1* event.clientY * 10 / window.innerHeight + '%';
+    phoneSec1.style.transform = "translateX(" +  x + ") translateY(" +  y + ")";
+    phoneSec1.style.transition = "all 1s linear";
+})
